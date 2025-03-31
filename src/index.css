@@ -1,0 +1,1818 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f8f9fa;
+}
+
+.App {
+  width: 360px;
+  min-height: 600px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: #5c6bc0;
+  color: white;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Network Selector */
+.network-selector {
+  position: relative;
+}
+
+.network-select {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Account Info */
+.account-info {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.account-selector {
+  position: relative;
+  cursor: pointer;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.active-account {
+  display: flex;
+  align-items: center;
+}
+
+.account-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #5c6bc0;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.account-details {
+  flex: 1;
+}
+
+.account-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.account-address {
+  font-size: 12px;
+  color: #757575;
+}
+
+.dropdown-arrow {
+  color: #757575;
+  font-size: 12px;
+}
+
+.account-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-item {
+  padding: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.account-item.active {
+  background-color: #f5f5f5;
+}
+
+.account-item-name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.account-item-address {
+  font-size: 12px;
+  color: #757575;
+}
+
+.create-account {
+  padding: 12px;
+  color: #5c6bc0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.create-account-form {
+  padding: 12px;
+}
+
+.account-name-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.create-account-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.cancel-btn {
+  padding: 6px 12px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-btn {
+  padding: 6px 12px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.account-address-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #757575;
+  overflow: hidden;
+}
+
+.address {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.copy-btn {
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.dashboard-tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: medium;
+  color: #757575;
+  transition: all 0.2s;
+}
+
+.tab.active {
+  color: #5c6bc0;
+  border-bottom: 2px solid #5c6bc0;
+}
+
+/* Content Area */
+.dashboard-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Assets */
+.assets {
+  margin-bottom: 16px;
+}
+
+.asset {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.asset-info {
+  flex: 1;
+}
+
+.asset-name {
+  font-weight: bold;
+}
+
+.asset-balance {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Send Transaction */
+.send-transaction {
+  padding: 8px 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 14px;
+  color: #757575;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.data-field {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.balance-display {
+  text-align: right;
+  font-size: 12px;
+  color: #757575;
+  margin-top: 4px;
+}
+
+.send-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.send-button:disabled {
+  background-color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+.error-message {
+  padding: 12px;
+  background-color: #ffebee;
+  color: #d32f2f;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.success-message {
+  padding: 12px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+/* Transaction History */
+.transaction-history h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.transaction-history.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  color: #9e9e9e;
+  font-style: italic;
+}
+
+.transaction-item {
+  display: flex;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.transaction-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-bottom: 4px;
+}
+
+.status-dot.pending {
+  background-color: #fdd835;
+}
+
+.status-dot.confirmed {
+  background-color: #43a047;
+}
+
+.status-dot.failed {
+  background-color: #e53935;
+}
+
+.status-text {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.transaction-details {
+  flex: 1;
+}
+
+.transaction-type {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.transaction-addresses {
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: #757575;
+}
+
+.transaction-network {
+  font-size: 12px;
+  color: #757575;
+}
+
+.transaction-amount {
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.transaction-time {
+  font-size: 12px;
+  color: #9e9e9e;
+  margin-top: 4px;
+}
+
+.transaction-actions {
+  display: flex;
+  align-items: center;
+}
+
+.view-tx {
+  font-size: 12px;
+  color: #5c6bc0;
+  text-decoration: none;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 32px;
+}
+
+/* Error */
+.error {
+  padding: 24px;
+  color: #d32f2f;
+  text-align: center;
+}
+
+/* Error Display */
+.error-display {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.error-display h3 {
+  color: #d32f2f;
+  margin-top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.error-message {
+  background-color: #ffebee;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  color: #b71c1c;
+  font-family: monospace;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.error-help h4,
+.technical-info h4 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.error-help ol {
+  padding-left: 20px;
+}
+
+.error-help li {
+  margin-bottom: 8px;
+}
+
+.technical-info {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 16px 0;
+}
+
+.technical-info code {
+  background-color: #e0e0e0;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-family: monospace;
+}
+
+.refresh-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.refresh-button:hover {
+  background-color: #3f51b5;
+}
+
+/* Debug Mode */
+.debug-mode {
+  padding: 20px;
+  background-color: #fff;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.debug-mode h2 {
+  color: #333;
+  margin-top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.debug-info {
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-family: monospace;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.debug-info p {
+  margin: 8px 0;
+}
+
+.debug-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.debug-buttons button {
+  flex: 1;
+  padding: 10px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.debug-buttons button:hover {
+  background-color: #3f51b5;
+}
+
+/* Recovery Options */
+.error-container {
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.recovery-options {
+  background-color: #f5f5f5;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.recovery-options h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.recovery-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #5c6bc0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.recovery-button.secondary {
+  background-color: #78909c;
+}
+
+.recovery-button:hover {
+  opacity: 0.9;
+}
+
+/* Simplified Mode Banner */
+.simplified-mode-banner {
+  background-color: #fff9c4;
+  color: #6d4c41;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 14px;
+  border-bottom: 1px solid #ffd54f;
+}
+
+/* Wallet Setup Styling */
+.wallet-setup {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+/* Setup choice screen */
+.setup-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.setup-choice h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #3f51b5;
+}
+
+.setup-choice p {
+  color: #555;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.setup-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.setup-button:hover {
+  border-color: #3f51b5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.setup-button .icon {
+  font-size: 24px;
+  margin-right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.setup-button.create .icon {
+  background-color: #e3f2fd;
+  color: #2196f3;
+}
+
+.setup-button.import .icon {
+  background-color: #e8f5e9;
+  color: #4caf50;
+}
+
+.button-content {
+  text-align: left;
+}
+
+.button-title {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.button-description {
+  display: block;
+  font-size: 12px;
+  color: #757575;
+}
+
+/* Seed phrase display */
+.seed-phrase-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.seed-phrase-section h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #3f51b5;
+}
+
+.warning {
+  background-color: #fff8e1;
+  border-left: 4px solid #ffc107;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  border-radius: 0 4px 4px 0;
+}
+
+.seed-phrase-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+}
+
+.seed-word {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.word-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #3f51b5;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.word {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.backup-actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.backup-button {
+  background-color: #3f51b5;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.backup-confirmation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.backup-confirmation input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+.continue-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.continue-button:disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Verification section */
+.verification-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.verification-section h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #3f51b5;
+}
+
+.verification-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.verification-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.verification-input label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.verification-input input {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.verification-input input.error {
+  border-color: #f44336;
+}
+
+.verify-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.verify-button:disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Import wallet section */
+.import-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.import-section h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #3f51b5;
+}
+
+.wallet-name-input,
+.mnemonic-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.wallet-name-input label,
+.mnemonic-input label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.wallet-name-input input {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+.mnemonic-input textarea {
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  resize: none;
+  font-family: monospace;
+}
+
+.mnemonic-input textarea.error {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.import-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.back-button {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.import-button {
+  flex: 2;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.import-button:disabled {
+  background-color: #e0e0e0;
+  color: #9e9e9e;
+  cursor: not-allowed;
+}
+
+/* Enhanced Balance Styling */
+.account-balance-card {
+  background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.balance-label {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+.balance-amount {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto Mono", monospace, system-ui;
+  letter-spacing: 0.5px;
+}
+
+.balance-amount.loading {
+  position: relative;
+}
+
+.balance-symbol {
+  margin-left: 4px;
+  font-size: 14px;
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+/* Balance loading animation */
+.balance-loading-indicator {
+  height: 2px;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.8),
+      transparent);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  animation: balance-loading 1.5s infinite ease-in-out;
+  border-radius: 1px;
+}
+
+@keyframes balance-loading {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.balance-placeholder {
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+/* Refresh button animation */
+.refresh-balance-btn.refreshing {
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Additional tweaks to existing components */
+.network-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+}
+
+.network-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.account-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.account-item {
+  display: flex;
+  align-items: center;
+}
+
+.account-item-details {
+  flex: 1;
+}
+
+.active-indicator {
+  color: #4caf50;
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+.copy-btn.copied {
+  background-color: #4caf50;
+  color: white;
+}
+
+.validation-message {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Balance header with refresh button */
+.balance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.refresh-balance-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.refresh-balance-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.refresh-balance-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Reset wallet button */
+.reset-wallet-button {
+  padding: 12px;
+  color: #f44336;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.reset-wallet-button:hover {
+  background-color: #ffebee;
+}
+
+.reset-confirmation {
+  padding: 16px;
+  background-color: #ffebee;
+  border-top: 1px solid #e0e0e0;
+}
+
+.reset-confirmation p {
+  color: #d32f2f;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.reset-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.cancel-reset,
+.confirm-reset {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancel-reset {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.confirm-reset {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Lock Screen Styles */
+.lock-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3f51b5 0%, #5c6bc0 100%);
+  padding: 20px;
+}
+
+.lock-screen-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 360px;
+  padding: 30px;
+}
+
+.lock-screen-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.wallet-logo {
+  width: 80px;
+  height: 80px;
+  /* background-color: #3f51b5; */
+  background-image: url('logo.jpeg');
+  background-size: contain;
+  /* Ensures the image covers the entire circle */
+  background-position: center;
+  /* Centers the image inside the circle */
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet-logo::before {}
+
+.lock-screen-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+}
+
+.lock-screen-footer {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #757575;
+}
+
+/* Password Setup Styles */
+.password-setup {
+  width: 100%;
+}
+
+.password-setup h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #3f51b5;
+  font-size: 20px;
+  text-align: center;
+}
+
+.password-info {
+  background-color: #e8f5e9;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: #2e7d32;
+}
+
+.password-field {
+  margin-bottom: 16px;
+}
+
+.password-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #757575;
+}
+
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 40px;
+  /* Make room for the toggle button */
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: #757575;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.toggle-password:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.toggle-password:focus {
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.password-strength {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.strength-meter {
+  height: 4px;
+  background-color: #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.strength-0 {
+  background-color: #e53935;
+  width: 20%;
+}
+
+.strength-1 {
+  background-color: #fb8c00;
+  width: 40%;
+}
+
+.strength-2 {
+  background-color: #fdd835;
+  width: 60%;
+}
+
+.strength-3 {
+  background-color: #43a047;
+  width: 80%;
+}
+
+.strength-4 {
+  background-color: #2e7d32;
+  width: 100%;
+}
+
+.strength-text {
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.password-requirements {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.password-requirements p {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.password-requirements ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.password-requirements li {
+  margin-bottom: 4px;
+  color: #757575;
+}
+
+.password-requirements li.met {
+  color: #43a047;
+}
+
+.password-requirements li.met::marker {
+  content: "✓ ";
+}
+
+.auth-error {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.password-submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.password-submit-btn:hover {
+  background-color: #303f9f;
+}
+
+.password-submit-btn:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.create-account-button {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #3f51b5;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset-wallet-link {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: #f44336;
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.reset-wallet-panel {
+  background-color: #ffebee;
+  border-radius: 4px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.warning-text {
+  color: #d32f2f;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.reset-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancel-reset-btn {
+  padding: 8px 16px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.confirm-reset-btn {
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Security Settings Styles */
+.security-settings {
+  padding: 16px;
+}
+
+.security-settings h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 24px;
+  color: #333;
+}
+
+.settings-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.settings-section h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #3f51b5;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.change-password-btn {
+  padding: 12px 24px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.change-password-btn:hover {
+  background-color: #303f9f;
+}
+
+.change-password-btn:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.lock-wallet-btn {
+  padding: 12px 24px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lock-wallet-btn:hover {
+  background-color: #d32f2f;
+}
+
+.security-tips {
+  background-color: #e3f2fd;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.security-tips h4 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #1976d2;
+}
+
+.security-tips ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.security-tips li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lock-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.2s;
+}
+
+.lock-btn:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Account Settings Styles */
+.account-settings {
+  padding: 16px;
+}
+
+.account-settings h3 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 22px;
+  color: #333;
+}
+
+.account-settings .settings-section {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.account-settings h4 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: #3f51b5;
+}
+
+.account-settings h5 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: #333;
+}
+
+.account-detail {
+  margin-bottom: 16px;
+}
+
+.detail-label {
+  display: block;
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 6px;
+}
+
+.detail-value {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.address-container {
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.address-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: monospace;
+}
+
+.name-container {
+  justify-content: space-between;
+}
+
+.edit-name-container {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.edit-name-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.copy-btn,
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn:hover,
+.edit-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.save-btn,
+.cancel-btn {
+  width: 32px;
+  height: 32px;
+}
+
+.save-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.security-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.export-btn {
+  padding: 10px 16px;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  flex: 1;
+}
+
+.export-btn:disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+}
+
+.warning-box {
+  background-color: #fff3e0;
+  border-left: 4px solid #ff9800;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 0 4px 4px 0;
+}
+
+.warning-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #e65100;
+}
+
+.secret-box {
+  background-color: #ffebee;
+  border: 1px solid #ffcdd2;
+  padding: 16px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.private-key-display,
+.mnemonic-display {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.secret-text {
+  font-family: monospace;
+  word-break: break-all;
+  background-color: #f5f5f5;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.copy-secret-btn {
+  align-self: flex-end;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.copy-secret-btn.copied {
+  background-color: #4caf50;
+}
+
+.hide-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.settings-error {
+  background-color: #ffebee;
+  color: #d32f2f;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.no-account {
+  text-align: center;
+  padding: 32px;
+  color: #757575;
+  font-style: italic;
+}

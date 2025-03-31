@@ -1,0 +1,50 @@
+{
+  "name": "hello-world-chrome-extension",
+  "version": "1.0.0",
+  "description": "A Web3 wallet Chrome extension supporting multiple networks",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "cross-env INLINE_RUNTIME_CHUNK=false react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.73.0",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "bip39": "^3.0.4",
+    "buffer": "^6.0.3",
+    "ethers": "^6.8.1",
+    "hdkey": "^2.1.0",
+    "node": "^18.20.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "assert": "^2.1.0",
+    "cross-env": "^7.0.3",
+    "crypto-browserify": "^3.12.1",
+    "https-browserify": "^1.0.0",
+    "os-browserify": "^0.3.0",
+    "process": "^0.11.10",
+    "react-app-rewired": "^2.2.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "url": "^0.11.4",
+    "webpack": "^5.98.0"
+  }
+}

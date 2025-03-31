@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "web3Wallet",
+  "version": "1.0.0",
+  "description": "A web3Wallet extension for Ethereum and Polygon networks",
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "http://localhost:5173/*",
+    "http://localhost:3000/*",
+    "https://sepolia.infura.io/*",
+    "https://polygon-amoy.infura.io/*"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:5173/*", "http://localhost:3000/*"],
+      "js": ["web3Wallet.js", "contentScript.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html", "web3Wallet.js"],
+      "matches": ["http://localhost:5173/*", "http://localhost:3000/*"]
+    }
+  ]
+}
