@@ -103,8 +103,8 @@ npm run build
 Then reload the extension in Chrome:
 
 1. Go to `chrome://extensions/`
-2. Find the Web3 Wallet extension
-3. Click the refresh icon
+2. Click on load unpacked and choose build folder
+3. Find the Web3Wallet extension
 
 ## React Integration
 
